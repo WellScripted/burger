@@ -1,0 +1,40 @@
+<h1>EAT-DA-BURGER</h1>
+
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col s6">
+                <!--HANDLEBARS GO HERE-->
+                {{#each burgers}}
+                {{#unless this.devoured}}
+                <p>{{this.id}}. {{this.burger_name}}</p>
+                <form class="devourBtn">
+                    <input input type="hidden" class="burgerID" type="text" value={{this.id}}>
+                    <button type="submit">DEVOUR ME!</button>
+                </form>
+                {{/unless}}
+                {{/each}}
+            </div>           
+        </div>
+    </div>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="burgerFooter">
+        <div class="footerCR">
+            <div class="container">
+                 <span class="blue-text text-darken-2">© 2019 Big Willie Style</span>
+                 <a class="blue-text text-darken-2" href="https://github.com/WellScripted">Reference Work</a>
+            </div>
+        </div>
+    </footer>
