@@ -4,15 +4,8 @@
     <div class="container">
         <div class="row">
             <div class="col s6">
-                <!--HANDLEBARS GO HERE-->
+                <h2>Ready to eat</h2>
                 {{#each burger_data}}
-                <div class="col s6">
-                {{#each burger_data}}
-                {{#if this.devoured}}
-                <input class="form-control" type="text" placeholder="{{this.id}} . {{this.burger_name}}" readonly>
-                {{/if}}
-                {{/each}}
-            </div>
                 {{#unless this.devoured}}
                 <p>{{this.id}}. {{this.burger_name}}</p>
                 <form class="devourBtn">
@@ -21,7 +14,18 @@
                 </form>
                 {{/unless}}
                 {{/each}}
-            </div>           
+            </div>         
+            <div class="col s6">
+                <!--HANDLEBARS GO HERE-->
+                <h2>Already Eaten</h2>
+                {{#each burger_data}}
+                {{#if this.devoured}}
+                <p>
+                    {{this.id}} . {{this.burger_name}}
+                </p>
+                {{/if}}
+                {{/each}}
+            </div>  
         </div>
     </div>
 </main>
