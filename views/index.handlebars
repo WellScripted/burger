@@ -5,7 +5,14 @@
         <div class="row">
             <div class="col s6">
                 <!--HANDLEBARS GO HERE-->
-                {{#each burgers}}
+                {{#each burger_data}}
+                <div class="col s6">
+                {{#each burger_data}}
+                {{#if this.devoured}}
+                <input class="form-control" type="text" placeholder="{{this.id}} . {{this.burger_name}}" readonly>
+                {{/if}}
+                {{/each}}
+            </div>
                 {{#unless this.devoured}}
                 <p>{{this.id}}. {{this.burger_name}}</p>
                 <form class="devourBtn">
@@ -19,14 +26,16 @@
     </div>
 </main>
 
+<h2>Add A Burger Option</h2>
 
-
-
-
-
-
-
-
+<div class="row">
+  <div class="col s12">
+    <form action="/burgers" method="POST">
+      <input type="text" id="name" name="burger_name" placeholder="Uber Delicious Burger">
+      <button type="submit" class="addBurgerButton">Add The Burger</button>
+    </form>
+  </div>
+</div>
 
 
 
