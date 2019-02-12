@@ -1,6 +1,6 @@
 var express = require("express");
 
-//var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 8080;
 
 var app = express();
 
@@ -24,6 +24,6 @@ app.use(routes);
 
 //Start our server to begin listening to client requests
  
-app.listen(process.env.PORT || 8080, function() {
+app.listen(PORT, function() {
     console.log("Server listening on: http://localhost:" + PORT);
   });

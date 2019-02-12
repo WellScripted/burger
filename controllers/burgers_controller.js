@@ -3,12 +3,12 @@ var router = express.Router();
 var burger = require("../models/burger");
 
 //GET route for the index
-// router.get("/", function(req, res) {
-//     res.redirect("/burgers");
-// });
+router.get("/", function(req, res) {
+    res.redirect("/burgers");
+});
 
 //GET request for /burgers
-router.get("/", function(req, res) {
+router.get("/burgers", function(req, res) {
     burger.selectAll(function(burgerData) {
         res.render("index", {
             burger_data: burgerData
